@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="ISO-8859-1">
+	    <title>Vuelos Index</title>
+	    <style>
+	        form {
+	            display: inline-block;
+	            margin-right: 15px;
+	        }
+	    </style>
+	    <link rel="stylesheet" type="text/css" href="hojaestilos.css">
+	</head>
+	
+	<body>
+	    <h1>INDEX DE VUELOS</h1>
+	    
+	    <form action="listar" method="get">
+	        <input type="submit" value="Listar Vuelos">
+	    </form>
+	    
+	    <form action="altaVuelo" method="post">
+	        <input type="submit" value="Registrar Vuelo">
+	    </form>
+	    
+	    <form action="/eliminarvuelo.jsp" method="post">
+	        <input type="submit" value="Eliminar Vuelo">
+	    </form>
+	    
+	    <form action="/actualizarvuelo.html" method="post">
+	        <input type="submit" value="Actualizar Plazas Vuelo">
+	    </form>
+	    
+	    <form action="/listarDisponibles" method="post">
+	        <input type="submit" value="Listar Vuelos Disponibles">
+	    </form>
+	</body>
+</html>

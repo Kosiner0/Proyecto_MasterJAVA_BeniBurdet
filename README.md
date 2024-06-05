@@ -123,13 +123,70 @@
         </li>
     </ol>
 
+<h3>Vuelos</h3>
+    <ol>
+        <li>Listar todos los vuelos
+            <ul>
+                <li>URL: <code>/vuelos</code></li>
+                <li>Método: <code>GET</code></li>
+            </ul>
+        </li>
+        <li>Insertar un nuevo vuelo
+            <ul>
+                <li>URL: <code>/vuelos/alta</code></li>
+                <li>Método: <code>POST</code></li>
+            </ul>
+        </li>
+        <li>Eliminar vuelo por id
+            <ul>
+                <li>URL: <code>/vuelos/eliminar/{idVuelo}</code></li>
+                <li>Método: <code>DELETE</code></li>
+            </ul>
+        </li>
+        <li>Actualizar el numero de plazas disponibles en un vuelo por id
+            <ul>
+                <li>URL: <code>/vuelos/actualizar/{idVuelo}/{numPlazas}</code></li>
+                <li>Método: <code>PUT</code></li>
+            </ul>
+        </li>
+        <li>Listar todos los vuelos disponibles por numero de plazas
+            <ul>
+                <li>URL: <code>/vuelos/disponibles/{numPlazas}</code></li>
+                <li>Método: <code>GET</code></li>
+            </ul>
+        </li>
+    </ol>
 
-
-
-
-
-
-
-
-
-
+<h3>Reservas</h3>
+    <ol>
+        <li>Listar todas las reservas
+            <ul>
+                <li>URL: <code>/reservas</code></li>
+                <li>Método: <code>GET</code></li>
+            </ul>
+        </li>
+        <li>Listar todas las reservas de un Hotel por nombre del hotel
+            <ul>
+                <li>URL: <code>/reservas/hotel/{nombreHotel}</code></li>
+                <li>Método: <code>GET</code></li>
+            </ul>
+        </li>
+        <li>Insertar una nueva reserva que actualiza plazas disponibles del vuelo
+            <ul>
+                <li>URL: <code>/reserva/alta/personas/vuelo/{numPersonas}</code></li>
+                <li>Método: <code>POST</code></li>
+            </ul>
+        </li>
+        <li>Eliminar una reserva por codigo de reserva
+            <ul>
+                <li>URL: <code>/reservas/eliminar/{idReserva}</code></li>
+                <li>Método: <code>DELETE</code></li>
+            </ul>
+        </li>
+        <li>Actualizar el nombre del cliente de la reserva por codigo de reserva
+            <ul>
+                <li>URL: <code>/reservas/actualizar/nombre/{idReserva}/{newNombre}</code></li>
+                <li>Método: <code>PUT</code></li>
+            </ul>
+        </li>
+    </ol>

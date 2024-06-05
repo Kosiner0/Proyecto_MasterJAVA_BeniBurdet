@@ -32,7 +32,7 @@ public class ReservasController {
 		return service.reservasHotel(nombreHotel);
 	}
 	
-	@PostMapping(value="reserva/alta/personas/vuelo/{numPersonas}", consumes=MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(value="reservas/alta/personas/vuelo/{numPersonas}", consumes=MediaType.APPLICATION_JSON_VALUE)
 	List<Reserva> altaVuelo(@RequestBody Reserva reserva, @PathVariable int numPersonas){
 		return service.altaVuelo(reserva, numPersonas);
 	}

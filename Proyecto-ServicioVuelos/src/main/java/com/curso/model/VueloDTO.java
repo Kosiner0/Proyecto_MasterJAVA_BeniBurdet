@@ -5,7 +5,7 @@ public class VueloDTO {
     private String compania;
     private String fechaVuelo;
     private double precio;
-    private int plazas;
+    private int plazasDisponibles;
 
     // Getters and Setters
     public String getCompania() {
@@ -32,11 +32,11 @@ public class VueloDTO {
         this.precio = precio;
     }
 
-    public int getPlazas() {
-        return plazas;
+    public int getPlazasDisponibles() {
+        return plazasDisponibles;
     }
 
-    public void setPlazas(int plazas) {
-        this.plazas = plazas;
+    public void setPlazasDisponibles(int plazasDisponibles) {
+        this.plazasDisponibles = plazasDisponibles;
     }
 }

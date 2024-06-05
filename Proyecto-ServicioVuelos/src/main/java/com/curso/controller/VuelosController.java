@@ -15,28 +15,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.curso.model.Vuelo;
 import com.curso.service.VuelosService;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.media.Content;
-import io.swagger.v3.oas.annotations.media.Schema;
-import io.swagger.v3.oas.annotations.responses.ApiResponse;
-import io.swagger.v3.oas.annotations.responses.ApiResponses;
-import io.swagger.v3.oas.annotations.tags.Tag;
-
-@Tag(name="Gestion de vuelos", description="Endpoints para gestionar CRUD de vuelos")
-
 @RestController
 public class VuelosController {
 
 	@Autowired
 	VuelosService service;
-	
-	@Operation(summary = "Lista de los vuelos existentes.", description = "Sca la lista de vuelos existentes en la BD.")
-
-	@ApiResponses({
-			@ApiResponse(responseCode = "200", description = "OK", content = {
-					@Content(mediaType = "application/JSON", schema = @Schema(implementation = Vuelo.class)) }),
-			@ApiResponse(responseCode = "401", description = "invalido lo que sea"), })
-	
 	
 	
 	@GetMapping(value="vuelos", produces=MediaType.APPLICATION_JSON_VALUE)
@@ -63,7 +46,6 @@ public class VuelosController {
 	List<Vuelo> vuelosDisponibles(@PathVariable int numPlazas){
 		return service.vuelosDisponibles(numPlazas);
 	}
-	
 	
 	
 }

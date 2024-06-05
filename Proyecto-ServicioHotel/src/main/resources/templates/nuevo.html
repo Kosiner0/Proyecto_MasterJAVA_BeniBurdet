@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Hotel</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <h1>Agregar Hotel</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/hoteles/lista}">Lista de Hoteles</a></li>
+        </ul>
+    </nav>
+    <form th:action="@{/hoteles/alta}" method="post">
+        <label>Nombre: <input type="text" name="nombre" /></label>
+        <label>Categoria: <input type="text" name="categoria" /></label>
+        <label>Precio: <input type="number" step="0.01" name="precio" /></label>
+        <label>Disponible: <input type="checkbox" name="disponible" /></label>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>

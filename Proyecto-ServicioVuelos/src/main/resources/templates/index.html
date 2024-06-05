@@ -1,38 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 	<head>
-	    <meta charset="ISO-8859-1">
-	    <title>Vuelos Index</title>
-	    <style>
+		<meta charset="UTF-8">
+		<title>Index</title>
+		<style>
 	        form {
 	            display: inline-block;
 	            margin-right: 15px;
 	        }
 	    </style>
-	    <link rel="stylesheet" type="text/css" href="hojaestilos.css">
+		<link rel="stylesheet" type="text/css" href="hojaestilos.css">
 	</head>
-	
 	<body>
-	    <h1>INDEX DE VUELOS</h1>
-	    
-	    <form action="listar" method="get">
-	        <input type="submit" value="Listar Vuelos">
-	    </form>
-	    
-	    <form action="altaVuelo" method="post">
-	        <input type="submit" value="Registrar Vuelo">
-	    </form>
-	    
-	    <form action="/eliminarvuelo.jsp" method="post">
-	        <input type="submit" value="Eliminar Vuelo">
-	    </form>
-	    
-	    <form action="/actualizarvuelo.html" method="post">
-	        <input type="submit" value="Actualizar Plazas Vuelo">
-	    </form>
-	    
-	    <form action="/listarDisponibles" method="post">
-	        <input type="submit" value="Listar Vuelos Disponibles">
-	    </form>
+		<h2>Menú Principal</h2>
+		<!--  
+		    <form th:action="@{/altaVuelo}" method="get">
+		        <input type="submit" value="Alta de Vuelo">
+		    </form>
+	    -->
+		<form th:action="@{/altaVuelo}" method="get">
+			<input type="submit" value="Alta de Vuelo">
+		</form>
+		<form th:action="@{/eliminarVuelo}" method="get">
+			<input type="submit" value="Eliminar Vuelo">
+		</form>
+		<form th:action="@{/actualizarVuelo}" method="get">
+			<input type="submit" value="Actualizar Vuelo">
+		</form>
+		<form th:action="@{/listarVuelosDisponibles}" method="get">
+			<input type="submit" value="Listar Vuelos Disponibles">
+		</form>
 	</body>
 </html>

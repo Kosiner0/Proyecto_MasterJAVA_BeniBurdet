@@ -16,24 +16,24 @@ public class VuelosServiceImpl implements VuelosService {
 	
 	
 	@Override
-	public List<Vuelo> vuelos() {
+	public List<Vuelo> vuelos(){
 		return dao.findAll();
 	}
 
 	@Override
-	public List<Vuelo> alta(Vuelo vuelo) {
+	public List<Vuelo> alta(Vuelo vuelo){
 		dao.save(vuelo);
 		return dao.findAll();
 	}
 
 	@Override
-	public List<Vuelo> eliminar(int idVuelo) {
+	public List<Vuelo> eliminar(int idVuelo){
 		dao.deleteById(idVuelo);
 		return dao.findAll();
 	}
 
 	@Override
-	public List<Vuelo> actualizarVuelo(int idVuelo, int plazas) {
+	public List<Vuelo> actualizarVuelo(int idVuelo, int plazas){
 		List<Vuelo> vuelosDisp = vuelosDisponibles(plazas);
 		
 		for(Vuelo v : vuelosDisp) {
@@ -47,7 +47,7 @@ public class VuelosServiceImpl implements VuelosService {
 	}
 
 	@Override
-	public List<Vuelo> vuelosDisponibles(int numPlazas) {
+	public List<Vuelo> vuelosDisponibles(int numPlazas){
 		return dao.vuelosDisponibles(numPlazas);
 	}
 

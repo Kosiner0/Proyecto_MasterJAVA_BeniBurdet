@@ -8,14 +8,17 @@
 <body>
     <h2>INTRODUCE LOS DATOS DEL VUELO</h2>
     
-    <form th:action="@{/altaVuelo}" th:object="${vueloDTO}" method="post">
-        Compania del vuelo: <input type="text" th:field="*{compania}" required>
-        Fecha del vuelo: <input type="text" th:field="*{fechaVuelo}" required>
-        Precio del vuelo: <input type="text" th:field="*{precio}" required>
-        Plazas disponibles: <input type="number" th:field="*{plazasDisponibles}" required><br>
+    <form th:action="@{/vuelos/alta}" th:object="${vueloDTO}" method="post">
+        <label>Compania del vuelo: <input type="text" th:field="*{compania}" required></label><br>
+        <label>Fecha del vuelo: <input type="text" th:field="*{fechaVuelo}" required></label><br>
+        <label>Precio del vuelo: <input type="text" th:field="*{precio}" required></label><br>
+        <label>Plazas disponibles: <input type="number" th:field="*{plazasDisponibles}" required></label><br>
         
         <input type="submit" value="Enviar Datos" style="margin-top: 20px;">
     </form>
+    
+    <p th:if="${successMessage}" th:text="${successMessage}" style="color: green;"></p>
+    <p th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;"></p>
     
     <form th:action="@{/}" method="get">
         <input type="submit" value="Volver al Menú" style="margin-top: 20px;">

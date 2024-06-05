@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Hoteles</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <h1>Lista de Hoteles</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/hoteles/nuevo}">Agregar Hotel</a></li>
+        </ul>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Disponible</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="hotel : ${hoteles}">
+                <td th:text="${hotel.nombre}"></td>
+                <td th:text="${hotel.categoria}"></td>
+                <td th:text="${hotel.precio}"></td>
+                <td th:text="${hotel.disponible ? 'Sí' : 'No'}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

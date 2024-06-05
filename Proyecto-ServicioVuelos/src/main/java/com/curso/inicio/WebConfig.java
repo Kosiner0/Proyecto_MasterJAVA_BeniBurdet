@@ -10,12 +10,15 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/index.html");
+        registry.addViewController("/").setViewName("index");
+        registry.addViewController("/altaVuelo").setViewName("altaVuelo");
+        registry.addViewController("/eliminarVuelo").setViewName("eliminarVuelo");
+        registry.addViewController("/actualizarVuelo").setViewName("actualizarVuelo");
+        registry.addViewController("/listarVuelosDisponibles").setViewName("listarVuelosDisponibles");
     }
-
+    
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/**")
-                .addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Listar vuelos disponibles</title>
+    <link rel="stylesheet" type="text/css" href="hojaestilos.css">
+</head>
+<body>
+    <h2>LISTAR VUELOS DISPONIBLES</h2>
+    
+    <form th:action="@{'http://localhost:8081/vuelos//disponibles'}" method="post">
+        <label>Número mínimo de plazas disponibles: <input type="number" name="numPlazas" required></label><br>
+        
+        <input type="submit" value="Listar Vuelos" style="margin-top: 20px;">
+    </form>
+    
+    <div th:if="${vuelos}">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID Vuelo</th>
+                    <th>Compañía</th>
+                    <th>Fecha</th>
+                    <th>Precio</th>
+                    <th>Plazas Disponibles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="vuelo : ${vuelos}">
+                    <td th:text="${vuelo.idVuelo}"></td>
+                    <td th:text="${vuelo.compania}"></td>
+                    <td th:text="${vuelo.fechaVuelo}"></td>
+                    <td th:text="${vuelo.precio}"></td>
+                    <td th:text="${vuelo.plazasDisponibles}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <p th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;"></p>
+    
+    <form th:action="@{/}" method="get">
+        <input type="submit" value="Volver al Menú" style="margin-top: 20px;">
+    </form>
+</body>
+</html>

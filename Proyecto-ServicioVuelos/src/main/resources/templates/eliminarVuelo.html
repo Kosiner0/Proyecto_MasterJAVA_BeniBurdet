@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Eliminar vuelo</title>
+    <link rel="stylesheet" type="text/css" href="hojaestilos.css">
+</head>
+<body>
+    <h2>ELIMINAR VUELO</h2>
+    
+    <form th:action="@{'http://localhost:8081/vuelos/eliminar'}" method="post">
+        <label>ID del vuelo a eliminar: <input type="number" name="idVuelo" required></label><br>
+        
+        <input type="submit" value="Eliminar Vuelo" style="margin-top: 20px;">
+    </form>
+    
+    <p th:if="${successMessage}" th:text="${successMessage}" style="color: green;"></p>
+    <p th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;"></p>
+    
+    <form th:action="@{/}" method="get">
+        <input type="submit" value="Volver al Menú" style="margin-top: 20px;">
+    </form>
+</body>
+</html>

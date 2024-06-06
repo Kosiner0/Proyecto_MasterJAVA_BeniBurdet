@@ -58,7 +58,7 @@ public class HotelControllerView {
         service.actualizarCategoria(idHotel, nuevaCategoria);
         return "redirect:/hoteles/lista";
     }
-
+    
     @GetMapping("/hoteles/disponibles")
     public String hotelesDisponibles(Model model) {
         model.addAttribute("hoteles", service.hotelesDisponibles());

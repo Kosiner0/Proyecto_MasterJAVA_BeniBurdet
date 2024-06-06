@@ -3,16 +3,17 @@
 <head>
     <title>Agregar Vuelo</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
     <h1>Agregar Vuelo</h1>
     <nav>
         <ul>
             <li><a th:href="@{/}">Inicio</a></li>
-            <li><a th:href="@{/hoteles/lista}">Lista de Vuelos</a></li>
+            <li><a th:href="@{/vuelos/lista}">Lista de Vuelos</a></li>
         </ul>
     </nav>
-    <form th:action="@{/vuelos/alta}" method="post">
+    <form th:action="@{/vuelos/nuevo}" method="post">
         <label>Companía: <input type="text" name="compania" /></label>
         <label>Fecha de vuelo: <input type="text" name="fechaVuelo" /></label>
         <label>Precio: <input type="number" step="0.01" name="precio" /></label>

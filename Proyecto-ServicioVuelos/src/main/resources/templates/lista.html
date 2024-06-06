@@ -3,13 +3,16 @@
 <head>
     <title>Lista de Vuelos</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
     <h1>Lista de Vuelos</h1>
     <nav>
         <ul>
-            <li><a th:href="@{/}">Inicio</a></li>
             <li><a th:href="@{/vuelos/nuevo}">Agregar Vuelo</a></li>
+            <li><a th:href="@{/vuelos/eliminar}">Eliminar Vuelo</a></li>
+            <li><a th:href="@{/vuelos/actualizar}">Actualizar Número de Plazas</a></li>
+            <li><a th:href="@{/vuelos/disponibles}">Vuelos Disponibles</a></li>
         </ul>
     </nav>
     <table>
@@ -32,5 +35,10 @@
             </tr>
         </tbody>
     </table>
+    <nav>
+        <ul>
+           	<li><a th:href="@{/}">Inicio</a></li>
+        </ul>
+    </nav>
 </body>
 </html>

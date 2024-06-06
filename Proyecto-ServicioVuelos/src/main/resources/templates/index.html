@@ -1,17 +1,40 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Vuelo Management</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <title>Inicio</title>
+    <link rel="stylesheet" type="text/css" href="/css/indexStyle.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
-    <h1>Vuelo Management</h1>
-    <nav>
-        <ul>
-            <li><a th:href="@{/vuelos/lista}">Lista de Vuelos</a></li>
-            <li><a th:href="@{/vuelos/nuevo}">Agregar Vuelo</a></li>
-        </ul>
-    </nav>
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/vuelos/lista}">Lista de Vuelos</a></li>
+                <li><a th:href="@{/vuelos/nuevo}">Agregar Vuelo</a></li>
+                <li><a th:href="@{/vuelos/eliminar}">Eliminar Vuelo</a></li>
+                <li><a th:href="@{/vuelos/actualizar}">Actualizar Número de Plazas</a></li>
+                <li><a th:href="@{/vuelos/disponibles}">Vuelos Disponibles</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <h1>Gestión de Vuelos</h1>
+            <p class="welcome-message">Bienvenido a la aplicación de gestión de vuelos. Utiliza el menú de navegación para realizar diferentes acciones.</p>
+        </div>
+    </header>
+    <footer>
+        <div class="footer-content">
+            <h3>Gestión de Vuelos</h3>
+            <p>Contacta con nosotros en nuestras redes sociales.</p>
+            <ul class="socials">
+                <li><a href="#"><img src="/images/facebook-icon.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="/images/twitter-icon.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="/images/instagram-icon.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="/images/linkedin-icon.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gestión de Vuelos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
-

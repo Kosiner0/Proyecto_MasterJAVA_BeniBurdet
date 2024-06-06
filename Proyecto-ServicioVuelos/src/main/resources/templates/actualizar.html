@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Actualizar Plazas</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+    <h1>Actualizar Número de Plazas</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/vuelos/lista}">Lista de Vuelos</a></li>
+        </ul>
+    </nav>
+    
+    <form th:action="@{/vuelos/actualizar}" method="post">
+        <label for="idVuelo">ID del Vuelo:</label>
+        <input type="number" id="idVuelo" name="idVuelo" required>
+        
+        <label for="numPlazas">Número de plazas a reservar:</label>
+        <input type="number" id="numPlazas" name="numPlazas" required>
+        
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

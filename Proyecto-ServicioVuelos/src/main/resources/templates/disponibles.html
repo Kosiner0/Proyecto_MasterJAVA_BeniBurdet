@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Vuelos Disponibles</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+    <h1>Vuelos Disponibles por Número de Plazas</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/vuelos/lista}">Lista de Hoteles</a></li>
+        </ul>
+    </nav>
+    
+    <form id="reservationForm" th:action="@{/vuelos/disponibles}" method="post" class="data-form">
+        <label for="numPlazas">Número de plazas a reservar:</label>
+        <input type="number" id="numPlazas" name="numPlazas" required>
+        <span id="error-message" style="color: red; display: none;">El número de plazas debe ser un valor positivo.</span>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <div class="vuelos-details" th:if="${vuelos != null}">
+        <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Compania</th>
+                <th>Fecha Vuelo</th>
+                <th>Precio</th>
+                <th>Plazas Disponibles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vuelo : ${vuelos}">
+                <td th:text="${vuelo.idVuelo}"></td>
+                <td th:text="${vuelo.compania}"></td>
+                <td th:text="${vuelo.fechaVuelo}"></td>
+                <td th:text="${vuelo.precio}"></td>
+                <td th:text="${vuelo.plazasDisponibles}"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <script>
+        document.getElementById('reservationForm').addEventListener('submit', function(event) {
+            const numPlazas = document.getElementById('numPlazas').value;
+            const errorMessage = document.getElementById('error-message');
+            
+            if (numPlazas <= 0) {
+                event.preventDefault();
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

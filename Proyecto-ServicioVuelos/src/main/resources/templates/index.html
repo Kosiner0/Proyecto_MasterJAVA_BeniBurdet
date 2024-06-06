@@ -1,34 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-	<head>
-		<meta charset="UTF-8">
-		<title>Index</title>
-		<style>
-	        form {
-	            display: inline-block;
-	            margin-right: 15px;
-	        }
-	    </style>
-		<link rel="stylesheet" type="text/css" href="hojaestilos.css">
-	</head>
-	<body>
-		<h2>Menú Principal</h2>
-		<!--  
-		    <form th:action="@{/altaVuelo}" method="get">
-		        <input type="submit" value="Alta de Vuelo">
-		    </form>
-	    -->
-		<form th:action="@{/altaVuelo}" method="get">
-			<input type="submit" value="Alta de Vuelo">
-		</form>
-		<form th:action="@{/eliminarVuelo}" method="get">
-			<input type="submit" value="Eliminar Vuelo">
-		</form>
-		<form th:action="@{/actualizarVuelo}" method="get">
-			<input type="submit" value="Actualizar Vuelo">
-		</form>
-		<form th:action="@{/listarVuelosDisponibles}" method="get">
-			<input type="submit" value="Listar Vuelos Disponibles">
-		</form>
-	</body>
+<head>
+    <title>Vuelo Management</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <h1>Vuelo Management</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/vuelos/lista}">Lista de Vuelos</a></li>
+            <li><a th:href="@{/vuelos/nuevo}">Agregar Vuelo</a></li>
+        </ul>
+    </nav>
+</body>
 </html>
+

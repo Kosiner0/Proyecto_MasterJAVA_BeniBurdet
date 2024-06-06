@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Vuelos</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <h1>Lista de Vuelos</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/vuelos/nuevo}">Agregar Vuelo</a></li>
+        </ul>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+            	<th>ID</th>
+                <th>Compania</th>
+                <th>Fecha Vuelo</th>
+                <th>Precio</th>
+                <th>Plazas Disponibles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vuelo : ${vuelos}">
+            	<td th:text="${vuelo.idVuelo}"></td>
+                <td th:text="${vuelo.compania}"></td>
+                <td th:text="${vuelo.fechaVuelo}"></td>
+                <td th:text="${vuelo.precio}"></td>
+                <td th:text="${vuelo.plazasDisponibles}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

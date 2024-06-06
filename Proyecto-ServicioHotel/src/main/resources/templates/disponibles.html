@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Lista de Hoteles</title>
+    <title>Hoteles Disponibles</title>
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
-    <h1>Lista de Hoteles</h1>
+    <h1>Hoteles Disponibles</h1>
     <nav>
         <ul>
-            <li><a th:href="@{/hoteles/nuevo}">Agregar Hotel</a></li>
-            <li><a th:href="@{/hoteles/eliminar}">Eliminar Hotel</a></li>
-            <li><a th:href="@{/hoteles/actualizar}">Actualizar Categoría</a></li>
-            <li><a th:href="@{/hoteles/disponibles}">Hoteles Disponibles</a></li>
-            <li><a th:href="@{/hoteles/datos}">Datos de un Hotel</a></li>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/hoteles/lista}">Lista de Hoteles</a></li>
         </ul>
     </nav>
     <table>
@@ -36,10 +33,5 @@
             </tr>
         </tbody>
     </table>
-    <nav>
-        <ul>
-           	<li><a th:href="@{/}">Inicio</a></li>
-        </ul>
-    </nav>
 </body>
 </html>

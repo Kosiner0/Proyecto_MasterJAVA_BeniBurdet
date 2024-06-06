@@ -1,56 +1,113 @@
 body {
     font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 20px;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-h1 {
-    color: #333;
-    text-align: center;
+header {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 nav ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
     text-align: center;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: hidden;
 }
 
 nav ul li {
     display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
     display: inline-block;
-    color: white;
+    color: #333;
     text-align: center;
     padding: 10px 20px;
-    margin: 10px;
     text-decoration: none;
-    background-color: #4CAF50;
-    border: 1px solid #4CAF50;
+    background-color: #e9ecef;
+    border: 1px solid #dee2e6;
     border-radius: 5px;
     transition: background-color 0.3s, transform 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #45a049;
+    background-color: #ced4da;
     transform: scale(1.05);
 }
 
+.hero {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 20px;
+    text-align: center;
+    color: #343a40;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
 .welcome-message {
-    background-color: #f2f2f2;
+    background-color: #ffffff;
     color: #333;
     padding: 20px;
-    margin: 20px 0;
+    margin: 20px auto;
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
     font-size: 18px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer .footer-content {
+    max-width: 600px;
+    margin: auto;
+}
+
+footer .footer-content h3 {
+    margin-top: 0;
+}
+
+footer .footer-content p {
+    margin: 5px 0 20px;
+}
+
+footer .footer-content .socials {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+footer .footer-content .socials li {
+    margin: 0 10px;
+}
+
+footer .footer-content .socials li img {
+    width: 24px;
+    height: 24px;
+}
+
+footer .footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
 }
 
 table {
@@ -84,6 +141,7 @@ form {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
+    background-color: #ffffff;
 }
 
 label {
@@ -103,7 +161,7 @@ input[type="text"], input[type="number"], input[type="checkbox"] {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 4px;
@@ -112,5 +170,5 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #0056b3;
 }

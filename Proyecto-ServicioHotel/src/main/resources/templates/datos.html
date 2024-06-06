@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Datos de Hotel</title>
+    <link rel="stylesheet" type="text/css" href="/css/datosStyle.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+    <h1>Datos de un Hotel</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/hoteles/lista}">Lista de Hoteles</a></li>
+        </ul>
+    </nav>
+    
+    <form th:action="@{/hoteles/datos}" method="post" class="data-form">
+        <label for="nombre">Nombre del Hotel:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <div class="hotel-details" th:if="${hotel != null}">
+        <h2>Detalles del Hotel</h2>
+        <p><strong>ID:</strong> <span th:text="${hotel.idHotel}"></span></p>
+        <p><strong>Nombre:</strong> <span th:text="${hotel.nombre}"></span></p>
+        <p><strong>Categoría:</strong> <span th:text="${hotel.categoria}"></span></p>
+        <p><strong>Precio:</strong> <span th:text="${hotel.precio}"></span></p>
+        <p><strong>Disponible:</strong> <span th:text="${hotel.disponible ? 'Sí' : 'No'}"></span></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Actualizar Categoría</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+    <h1>Actualizar Categoría de Hotel</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/hoteles/lista}">Lista de Hoteles</a></li>
+        </ul>
+    </nav>
+    
+    <form th:action="@{/hoteles/actualizar}" method="post">
+        <label for="idHotel">ID del Hotel:</label>
+        <input type="number" id="idHotel" name="idHotel" required>
+        
+        <label for="nuevaCategoria">Nueva Categoría:</label>
+        <input type="text" id="nuevaCategoria" name="nuevaCategoria" required>
+        
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

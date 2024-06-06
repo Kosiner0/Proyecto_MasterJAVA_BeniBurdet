@@ -1,10 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+    <title>Reservas</title>
+    <link rel="stylesheet" type="text/css" href="/css/indexStyle.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
-Hola
+    <header>
+        <nav>
+            <ul>
+                <li><a th:href="@{/reservas/lista}">Lista de Reservas</a></li>
+                <li><a th:href="@{/reservas/listaHotel}">Reservas de un Hotel</a></li>
+                <li><a th:href="@{/reservas/nuevo}">Nueva Reserva</a></li>
+                <li><a th:href="@{/reservas/eliminar}">Eliminar Reserva</a></li>
+                <li><a th:href="@{/reservas/actualizar}">Actualizar Nombre del Cliente</a></li>
+            </ul>
+        </nav>
+
+		<div class="hero">
+			<h1>Gestión de Reservas</h1>
+			<p class="welcome-message">Bienvenido a la aplicación de gestión
+				de reservas. Utiliza el menú de navegación para realizar diferentes acciones.</p>
+		</div>
+	</header>
+    <footer>
+        <div class="footer-content">
+            <h3>Gestión de Reservas</h3>
+            <p>Contacta con nosotros en nuestras redes sociales.</p>
+            <ul class="socials">
+                <li><a href="#"><img src="/images/facebook-icon.png" alt="Facebook"></a></li>
+                <li><a href="#"><img src="/images/twitter-icon.png" alt="Twitter"></a></li>
+                <li><a href="#"><img src="/images/instagram-icon.png" alt="Instagram"></a></li>
+                <li><a href="#"><img src="/images/linkedin-icon.png" alt="LinkedIn"></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Gestión de Reservas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>

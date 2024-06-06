@@ -44,11 +44,10 @@ nav ul li a:hover {
 .hero {
     background-size: cover;
     background-position: center;
-    color: #343a40; 
+    color: #343a40;
     padding: 100px 20px;
     text-align: center;
 }
-
 
 .hero h1 {
     margin: 0;

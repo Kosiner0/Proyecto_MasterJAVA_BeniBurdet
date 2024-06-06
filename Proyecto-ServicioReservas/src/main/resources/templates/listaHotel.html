@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Reservas Hotel</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <script>
+        function validateForm() {
+            var nombreHotel = document.getElementById("nombreHotel").value.trim();
+            
+            if (nombreHotel === "") {
+                alert("El nombre del hotel no puede estar vacío.");
+                return false;
+            }else if (nombreHotel.length < 3) {
+                alert("El nombre del hotel debe tener al menos 3 caracteres.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h1>Reservas de un Hotel por nombre</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/reservas/lista}">Lista de Reservas</a></li>
+        </ul>
+    </nav>
+    
+    <form th:action="@{/reservas/listaHotel}" method="post" class="data-form" onsubmit="return validateForm()">
+        <label for="nombreHotel">Nombre del Hotel:</label>
+        <input type="text" id="nombreHotel" name="nombreHotel" required>
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <div class="reservas-details" th:if="${reservas != null}">
+       <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Cliente</th>
+                <th>DNI/NIE Cliente</th>
+                <th>ID Hotel</th>
+                <th>ID Vuelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="reserva : ${reservas}">
+                <td th:text="${reserva.idReserva}"></td>
+                <td th:text="${reserva.nombreCliente}"></td>
+                <td th:text="${reserva.dni}"></td>
+                <td th:text="${reserva.idHotel}"></td>
+                <td th:text="${reserva.idVuelo}"></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</body>
+</html>

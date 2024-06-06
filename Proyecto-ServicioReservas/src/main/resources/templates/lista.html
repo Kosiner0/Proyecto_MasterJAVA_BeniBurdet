@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Reservas</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+    <h1>Lista de Reservas</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/reservas/listaHotel}">Reservas de un Hotel</a></li>
+            <li><a th:href="@{/reservas/nuevo}">Insertar nueva Reserva</a></li>
+            <li><a th:href="@{/reservas/eliminar}">Eliminar Reserva</a></li>
+            <li><a th:href="@{/reservas/actualizar}">Actualizar Nombre del Cliente</a></li>
+        </ul>
+    </nav>
+    <table>
+        <thead>
+            <tr>
+            	<th>ID</th>
+                <th>Nombre Cliente</th>
+                <th>DNI/NIE Cliente</th>
+                <th>ID Hotel</th>
+                <th>ID Vuelo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="reserva : ${reservas}">
+            	<td th:text="${reserva.idReserva}"></td>
+                <td th:text="${reserva.nombreCliente}"></td>
+                <td th:text="${reserva.dni}"></td>
+                <td th:text="${reserva.idHotel}"></td>
+                <td th:text="${reserva.idVuelo}"></td>
+            </tr>
+        </tbody>
+    </table>
+    <nav>
+        <ul>
+           	<li><a th:href="@{/}">Inicio</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

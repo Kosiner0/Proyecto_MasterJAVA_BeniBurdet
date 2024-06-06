@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Reserva</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+</head>
+<body>
+    <h1>Agregar Reserva</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/}">Inicio</a></li>
+            <li><a th:href="@{/reservas/lista}">Lista de Reservas</a></li>
+        </ul>
+    </nav>
+    <form th:action="@{/reservas/nuevo}" method="post">
+        <label>Nombre del Cliente: <input type="text" name="nombreCliente" /></label>
+        <label>DNI/NIE: <input type="text" name="dni" /></label>
+        <label>ID Hotel: <input type="number" name="idHotel" /></label>
+        <label>ID Vuelo: <input type="number" name="idVuelo" /></label>
+        <label>Número de personas: <input type="number" name="numPersonas" /></label>
+        <button type="submit">Agregar</button>
+    </form>
+</body>
+</html>

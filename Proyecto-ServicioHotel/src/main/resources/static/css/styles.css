@@ -74,10 +74,6 @@ tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-tr:hover {
-    background-color: #f1f1f1;
-}
-
 form {
     max-width: 500px;
     margin: 0 auto;

@@ -5,61 +5,206 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agencia de Viajes</title>
     <link rel="icon" type="image/png" href="/images/agencia-de-viajes.png">
-    
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #e0f7fa;
+            background-color: #f4f4f9;
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            flex-direction: column;
+            min-height: 100vh;
             color: #333;
         }
-        .container {
-            text-align: center;
+        header {
+            background-color: #343a40;
+            color: #ffffff;
             padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #d4d4d4;
+        }
+        .hero {
             background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 100%;
+            color: #343a40;
+            padding: 100px 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        .hero h1 {
+            margin: 0;
+            font-size: 48px;
             color: #00796b;
-            margin-bottom: 20px;
         }
-        p {
-            color: #004d40;
-            margin-bottom: 20px;
+        .container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .welcome-message {
+            background-color: #ffffff;
+            color: #333;
+            padding: 20px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
         }
         .button {
             display: inline-block;
-            padding: 12px 25px;
+            padding: 12px 30px;
             margin: 10px;
-            background-color: #007bff;
-            color: #fff;
+            background-color: #00796b;
+            color: #ffffff;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 30px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             font-size: 16px;
         }
         .button:hover {
-            background-color: #0056b3;
+            background-color: #005b4f;
             transform: scale(1.05);
         }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+        footer .footer-content {
+            max-width: 600px;
+            margin: auto;
+        }
+        footer .footer-content h3 {
+            margin-top: 0;
+        }
+        footer .footer-content p {
+            margin: 5px 0 20px;
+        }
+        footer .footer-bottom {
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            margin-bottom: 20px;
+            color: #00796b;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .contact-form input, .contact-form textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #00796b;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .contact-form button:hover {
+            background-color: #005b4f;
+        }
+        .info {
+            margin: 20px auto;
+            text-align: center;
+            color: #333;
+        }
     </style>
-    <link rel="icon" type="image/png" href="/images/logo.png">
 </head>
 <body>
-    <div class="container">
+    <header>
+        <nav>
+            <ul>
+                <li><a href="http://localhost:8082" target="blank">Gestión de Reservas</a></li>
+                <li><a href="http://localhost:8080" target="blank">Gestión de Hoteles</a></li>
+                <li><a href="http://localhost:8081" target="blank">Gestión de Vuelos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
         <h1>Bienvenid@ a la Agencia de Viajes</h1>
-        <p>Seleccione una de las opciones para continuar:</p>
-        <a href="http://localhost:8082" class="button" target="_blank">Gestión de Reservas</a>
-        <a href="http://localhost:8080" class="button" target="_blank">Gestión de Hoteles</a>
-        <a href="http://localhost:8081" class="button" target="_blank">Gestión de Vuelos</a>
+        <div class="welcome-message">
+            <p>Bienvenido a nuestra agencia de viajes. Estamos aquí para ayudarte a encontrar las mejores opciones de reservas, hoteles y vuelos. Explora nuestras opciones y comienza tu aventura hoy mismo.</p>
+        </div>
     </div>
+
+    <div id="contacto" class="container">
+        <div class="contact-form">
+            <h2>Contáctanos</h2>
+            <form action="contacto.html" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+
+        <div class="info">
+            <p><strong>Dirección:</strong> Avenida del Alcalde Gómez Laguna 25, <br>
+            								50009, Zaragoza (Aragón)</p>
+            <p><strong>Teléfono:</strong> +34 976 15 50 00</p>
+            <p><strong>Email:</strong> atencion-al-cliente@agenciadeviajes.com</p>
+            <p><strong>Horario:</strong> Lunes a Viernes: 9:00 AM - 6:00 PM</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Agencia de Viajes</h3>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Agencia de Viajes. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
